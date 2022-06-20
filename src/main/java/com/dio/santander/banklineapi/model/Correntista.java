@@ -5,6 +5,8 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 
 
 
@@ -13,11 +15,16 @@ import javax.persistence.GenerationType;
 
 public class Correntista {
 	@Id
-	@GeneratedValue(Strategy = GenerationType.IDENTITY)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column ()
+	
+	@Column (length = 20)
 	private String cpf;
+	
+	@Column (length = 60)
 	private String nome;
+	
+	@Embedded
 	private Conta conta;
 	
 	
